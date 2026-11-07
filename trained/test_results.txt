@@ -1,0 +1,31 @@
+test_both_routes_share_one_contract (test_v4.ApiTests.test_both_routes_share_one_contract) ... ok
+test_cors_preflight_for_demo (test_v4.ApiTests.test_cors_preflight_for_demo) ... ok
+test_extra_unverified_fields_not_silently_ignored (test_v4.ApiTests.test_extra_unverified_fields_not_silently_ignored) ... ok
+test_health_exposes_research_status (test_v4.ApiTests.test_health_exposes_research_status) ... ok
+test_missing_replay_asof_is_clear_error (test_v4.ApiTests.test_missing_replay_asof_is_clear_error) ... ok
+test_naive_timestamp_rejected (test_v4.ApiTests.test_naive_timestamp_rejected) ... ok
+test_unexpected_origin_not_allowed (test_v4.ApiTests.test_unexpected_origin_not_allowed) ... ok
+test_backtest_covers_multiple_entry_times_without_new_independent_flights (test_v4.CoreTests.test_backtest_covers_multiple_entry_times_without_new_independent_flights) ... ok
+test_backtest_never_buys_in_the_past_when_quote_missing (test_v4.CoreTests.test_backtest_never_buys_in_the_past_when_quote_missing) ... ok
+test_buy_now_timestamp_is_now (test_v4.CoreTests.test_buy_now_timestamp_is_now) ... ok
+test_censored_window_is_not_labelled_as_no_drop (test_v4.CoreTests.test_censored_window_is_not_labelled_as_no_drop) ... ok
+test_dip_then_rebound_is_positive_opportunity (test_v4.CoreTests.test_dip_then_rebound_is_positive_opportunity) ... ok
+test_economic_gate_rejects_expected_price_increase (test_v4.CoreTests.test_economic_gate_rejects_expected_price_increase) ... ok
+test_eligible_slot_is_not_masked (test_v4.CoreTests.test_eligible_slot_is_not_masked) ... ok
+test_four_partitions_have_no_shared_sources (test_v4.CoreTests.test_four_partitions_have_no_shared_sources) ... ok
+test_future_changes_do_not_change_features (test_v4.CoreTests.test_future_changes_do_not_change_features) ... ok
+test_future_quote_is_rejected (test_v4.CoreTests.test_future_quote_is_rejected) ... ok
+test_live_is_not_enabled_by_demo_request (test_v4.CoreTests.test_live_is_not_enabled_by_demo_request) ... ok
+test_mixed_seller_or_fare_rejected (test_v4.CoreTests.test_mixed_seller_or_fare_rejected) ... ok
+test_nonfinite_prices_rejected (test_v4.CoreTests.test_nonfinite_prices_rejected) ... ok
+test_past_departure_is_abstention (test_v4.CoreTests.test_past_departure_is_abstention) ... ok
+test_replay_requires_explicit_clock (test_v4.CoreTests.test_replay_requires_explicit_clock) ... ok
+test_short_history_is_abstention (test_v4.CoreTests.test_short_history_is_abstention) ... ok
+test_stale_history_is_not_buy_now (test_v4.CoreTests.test_stale_history_is_not_buy_now) ... ok
+test_unknown_route_is_out_of_scope (test_v4.CoreTests.test_unknown_route_is_out_of_scope) ... ok
+test_wait_response_is_a_recheck_not_a_promised_bottom (test_v4.CoreTests.test_wait_response_is_a_recheck_not_a_promised_bottom) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 1.425s
+
+OK

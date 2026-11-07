@@ -1,0 +1,6 @@
+{
+  "tests_run": 26,
+  "passed": 26,
+  "failed": 0,
+  "method": "unittest + FastAPI TestClient; final release sources/model"
+}

@@ -1,0 +1,153 @@
+{
+  "protocol": "source_disjoint_and_time_ordered_internal_diagnostic",
+  "stage_counts": {
+    "train": {
+      "itineraries": 238,
+      "sources": 122
+    },
+    "calibration": {
+      "itineraries": 9,
+      "sources": 7
+    },
+    "policy_validation": {
+      "itineraries": 14,
+      "sources": 9
+    },
+    "test": {
+      "itineraries": 11,
+      "sources": 11
+    }
+  },
+  "new_market_data": false,
+  "original_generator_global_statistics_caveat": true,
+  "data_previously_used_in_development": true,
+  "test_used_to_select_parameters": false,
+  "status": "COMPLETE",
+  "forecast": {
+    "pairs": 659,
+    "itineraries": 11,
+    "source_groups": 11,
+    "price_mae_vnd": 163438.54324734447,
+    "persistence_mae_vnd": 163438.54324734447,
+    "auc_drop_within": 0.7138764596747791,
+    "average_precision": 0.25819483459087517,
+    "brier": 0.12216517549027128,
+    "event_prevalence": 0.14871016691957512,
+    "empirical_interval_90pct_coverage": 0.866464339908953,
+    "by_horizon": [
+      {
+        "hours": 6,
+        "n_pairs": 153,
+        "model_mae_vnd": 29542.483660130718,
+        "persistence_mae_vnd": 29542.483660130718,
+        "observed_drop_within_rate": 0.0392156862745098
+      },
+      {
+        "hours": 12,
+        "n_pairs": 149,
+        "model_mae_vnd": 74147.65100671141,
+        "persistence_mae_vnd": 74147.65100671141,
+        "observed_drop_within_rate": 0.09395973154362416
+      },
+      {
+        "hours": 24,
+        "n_pairs": 141,
+        "model_mae_vnd": 153943.26241134753,
+        "persistence_mae_vnd": 153943.26241134753,
+        "observed_drop_within_rate": 0.16312056737588654
+      },
+      {
+        "hours": 48,
+        "n_pairs": 119,
+        "model_mae_vnd": 275924.3697478992,
+        "persistence_mae_vnd": 275924.3697478992,
+        "observed_drop_within_rate": 0.226890756302521
+      },
+      {
+        "hours": 72,
+        "n_pairs": 97,
+        "model_mae_vnd": 387597.9381443299,
+        "persistence_mae_vnd": 387597.9381443299,
+        "observed_drop_within_rate": 0.28865979381443296
+      }
+    ],
+    "calibration_bins": [
+      {
+        "bin": "(-0.001, 0.1]",
+        "n_pairs": 343,
+        "predicted_probability": 0.05588630199804384,
+        "observed_event_rate": 0.06705539358600583
+      },
+      {
+        "bin": "(0.1, 0.2]",
+        "n_pairs": 170,
+        "predicted_probability": 0.1395500933048485,
+        "observed_event_rate": 0.18823529411764706
+      },
+      {
+        "bin": "(0.2, 0.3]",
+        "n_pairs": 77,
+        "predicted_probability": 0.23996314481048436,
+        "observed_event_rate": 0.33766233766233766
+      },
+      {
+        "bin": "(0.3, 0.4]",
+        "n_pairs": 36,
+        "predicted_probability": 0.3376983709011523,
+        "observed_event_rate": 0.25
+      },
+      {
+        "bin": "(0.4, 0.5]",
+        "n_pairs": 24,
+        "predicted_probability": 0.45113850003663797,
+        "observed_event_rate": 0.25
+      },
+      {
+        "bin": "(0.5, 0.6]",
+        "n_pairs": 6,
+        "predicted_probability": 0.5390973762210599,
+        "observed_event_rate": 0.16666666666666666
+      },
+      {
+        "bin": "(0.6, 0.7]",
+        "n_pairs": 3,
+        "predicted_probability": 0.6352702277046299,
+        "observed_event_rate": 0.3333333333333333
+      }
+    ]
+  },
+  "sequential": {
+    "episodes": 35,
+    "unique_itineraries": 7,
+    "executed": 35,
+    "unexecuted": 0,
+    "source_groups": 7,
+    "initial_waits": 0,
+    "mean_saving_vnd": 0.0,
+    "total_saving_vnd": 0.0,
+    "mean_paid_vnd": 1405657.142857143,
+    "mean_regret_vnd": 205942.85714285713,
+    "win_rate": 0.0,
+    "loss_rate": 0.0,
+    "mean_downside_vnd": 0.0,
+    "minimum_saving_vnd": 0.0,
+    "disclaimer": "SEMI_SYNTHETIC_REAL_CALIBRATED; internal benchmark; oracle uses observed prices only, not guaranteed market minima",
+    "cluster_bootstrap_saving_95pct": [
+      0.0,
+      0.0
+    ]
+  },
+  "policy": {
+    "enabled": false
+  },
+  "policy_selection": {
+    "status": "WAIT_DISABLED_NO_ROBUST_VALIDATION_EDGE",
+    "selection_partition": "policy_validation_only",
+    "selection_score": "cluster_bootstrap_80pct_lower_bound - 0.5 * mean_downside",
+    "selected_score_vnd": 0.0,
+    "requires_at_least_wait_source_groups": 3,
+    "test_used_for_selection": false,
+    "shadow_policy_is_not_enabled_automatically": true
+  },
+  "excluded_test_episodes": 20
+}

@@ -1,0 +1,11 @@
+# Tested CPU environment; Python 3.11+ recommended.
+numpy==2.3.5
+pandas==2.2.3
+scikit-learn==1.8.0
+lightgbm==4.7.0
+joblib==1.5.3
+fastapi==0.115.12
+starlette==0.46.2
+pydantic==2.14.1
+uvicorn>=0.28,<1
+

@@ -1,0 +1,361 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AirPulse V4 Research API",
+    "version": "4.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/insight": {
+      "post": {
+        "summary": "Insight",
+        "operationId": "insight_insight_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForecastRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predict": {
+      "post": {
+        "summary": "Insight",
+        "operationId": "insight_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForecastRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ForecastRequest": {
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": [
+              "replay",
+              "live"
+            ],
+            "title": "Mode",
+            "default": "replay"
+          },
+          "as_of": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "As Of"
+          },
+          "history": {
+            "items": {
+              "$ref": "#/components/schemas/PriceQuote"
+            },
+            "type": "array",
+            "maxItems": 500,
+            "minItems": 4,
+            "title": "History"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "history"
+        ],
+        "title": "ForecastRequest"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "InsightResponse": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "title": "Schema Version"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "model_id": {
+            "type": "string",
+            "title": "Model Id"
+          },
+          "mode": {
+            "type": "string",
+            "title": "Mode"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "training_data_kind": {
+            "type": "string",
+            "title": "Training Data Kind"
+          },
+          "recommendation": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Recommendation"
+          },
+          "forecast_slots": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Forecast Slots"
+          },
+          "probability_event": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Probability Event"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "policy_validation": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Policy Validation"
+          },
+          "valid_until": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Valid Until"
+          }
+        },
+        "type": "object",
+        "required": [
+          "schema_version",
+          "model_version",
+          "model_id",
+          "mode",
+          "status",
+          "training_data_kind",
+          "recommendation",
+          "forecast_slots",
+          "probability_event",
+          "warnings"
+        ],
+        "title": "InsightResponse"
+      },
+      "PriceQuote": {
+        "properties": {
+          "itinerary_id": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Itinerary Id"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "departure_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Departure At"
+          },
+          "origin": {
+            "type": "string",
+            "pattern": "^[A-Za-z]{3}$",
+            "title": "Origin"
+          },
+          "destination": {
+            "type": "string",
+            "pattern": "^[A-Za-z]{3}$",
+            "title": "Destination"
+          },
+          "airline": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Airline"
+          },
+          "price_vnd": {
+            "type": "number",
+            "maximum": 1000000000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Price Vnd"
+          },
+          "currency": {
+            "type": "string",
+            "const": "VND",
+            "title": "Currency",
+            "default": "VND"
+          },
+          "fare_family": {
+            "type": "string",
+            "title": "Fare Family",
+            "default": "UNSPECIFIED"
+          },
+          "seller": {
+            "type": "string",
+            "title": "Seller",
+            "default": "UNSPECIFIED"
+          },
+          "cabin": {
+            "type": "string",
+            "title": "Cabin",
+            "default": "UNSPECIFIED"
+          },
+          "baggage": {
+            "type": "string",
+            "title": "Baggage",
+            "default": "UNSPECIFIED"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "itinerary_id",
+          "observed_at",
+          "departure_at",
+          "origin",
+          "destination",
+          "airline",
+          "price_vnd"
+        ],
+        "title": "PriceQuote"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

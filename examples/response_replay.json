@@ -1,0 +1,102 @@
+{
+  "schema_version": "airpulse.insight.v4",
+  "model_version": "4.0.0",
+  "mode": "replay",
+  "model_id": "airpulse-v4-a728fa6e295d554c",
+  "training_data_kind": "SEMI_SYNTHETIC_REAL_CALIBRATED",
+  "status": "OK",
+  "recommendation": {
+    "itinerary_id": "SEMI_00005_VJ507_HANDAD_20270611T1110",
+    "as_of": "2027-06-03T08:28:48+07:00",
+    "departure_at": "2027-06-11T11:10:00+07:00",
+    "latest_quote_at": "2027-06-03T08:28:48+07:00",
+    "quote_age_hours": 0.0,
+    "current_observed_price_vnd": 742000,
+    "purchase_deadline": "2027-06-09T23:10:00+07:00",
+    "quotes_seen": 13,
+    "history_hours": 26.9989,
+    "action": "BUY_NOW",
+    "recommended_buy_at": "2027-06-03T08:28:48+07:00",
+    "next_check_at": null,
+    "reason_code": "NO_VALIDATED_WAIT_ADVANTAGE",
+    "opportunity_window": null
+  },
+  "forecast_slots": [
+    {
+      "horizon_hours": 6,
+      "window_end": "2027-06-03T14:28:48+07:00",
+      "forecast_price_vnd": 742000,
+      "empirical_90pct_lower_vnd": 690746,
+      "empirical_90pct_upper_vnd": 797057,
+      "prob_drop_within_window": 0.042804,
+      "estimated_opportunity_saving_vnd": 13740,
+      "estimated_opportunity_low_vnd": 728260,
+      "expected_6h_saving_vnd": -12120
+    },
+    {
+      "horizon_hours": 12,
+      "window_end": "2027-06-03T20:28:48+07:00",
+      "forecast_price_vnd": 742000,
+      "empirical_90pct_lower_vnd": 626403,
+      "empirical_90pct_upper_vnd": 878929,
+      "prob_drop_within_window": 0.074484,
+      "estimated_opportunity_saving_vnd": 19626,
+      "estimated_opportunity_low_vnd": 722374,
+      "expected_6h_saving_vnd": null
+    },
+    {
+      "horizon_hours": 24,
+      "window_end": "2027-06-04T08:28:48+07:00",
+      "forecast_price_vnd": 742000,
+      "empirical_90pct_lower_vnd": 555974,
+      "empirical_90pct_upper_vnd": 990269,
+      "prob_drop_within_window": 0.133565,
+      "estimated_opportunity_saving_vnd": 28511,
+      "estimated_opportunity_low_vnd": 713489,
+      "expected_6h_saving_vnd": null
+    },
+    {
+      "horizon_hours": 48,
+      "window_end": "2027-06-05T08:28:48+07:00",
+      "forecast_price_vnd": 742000,
+      "empirical_90pct_lower_vnd": 482626,
+      "empirical_90pct_upper_vnd": 1140768,
+      "prob_drop_within_window": 0.251115,
+      "estimated_opportunity_saving_vnd": 55393,
+      "estimated_opportunity_low_vnd": 686607,
+      "expected_6h_saving_vnd": null
+    },
+    {
+      "horizon_hours": 72,
+      "window_end": "2027-06-06T08:28:48+07:00",
+      "forecast_price_vnd": 742000,
+      "empirical_90pct_lower_vnd": 442358,
+      "empirical_90pct_upper_vnd": 1244613,
+      "prob_drop_within_window": 0.310681,
+      "estimated_opportunity_saving_vnd": 71197,
+      "estimated_opportunity_low_vnd": 670803,
+      "expected_6h_saving_vnd": null
+    }
+  ],
+  "probability_event": {
+    "within_window": true,
+    "relative_drop_at_least": 0.04,
+    "absolute_drop_at_least_vnd": 50000
+  },
+  "warnings": [
+    "SEMI_SYNTHETIC_RESEARCH_MODEL",
+    "FARE_TOTAL_NOT_VERIFIED",
+    "FORECASTS_ARE_NOT_PAYABLE_FARES",
+    "INTERVALS_HAVE_NO_MARKET_COVERAGE_GUARANTEE"
+  ],
+  "valid_until": "2027-06-03T11:28:48+07:00",
+  "policy_validation": {
+    "status": "WAIT_DISABLED_NO_ROBUST_VALIDATION_EDGE",
+    "selection_partition": "policy_validation_only",
+    "selection_score": "cluster_bootstrap_80pct_lower_bound - 0.5 * mean_downside",
+    "selected_score_vnd": 0.0,
+    "requires_at_least_wait_source_groups": 3,
+    "test_used_for_selection": false,
+    "shadow_policy_is_not_enabled_automatically": true
+  }
+}

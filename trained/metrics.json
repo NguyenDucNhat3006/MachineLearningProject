@@ -1,0 +1,467 @@
+{
+  "protocol": "source_grouped_development_benchmark",
+  "test_was_previously_audited_in_v3": true,
+  "benchmark_reused_during_development": true,
+  "new_real_world_validation": false,
+  "policy": {
+    "enabled": false
+  },
+  "policy_selection": {
+    "status": "WAIT_DISABLED_NO_ROBUST_VALIDATION_EDGE",
+    "selection_partition": "policy_validation_only",
+    "selection_score": "cluster_bootstrap_80pct_lower_bound - 0.5 * mean_downside",
+    "selected_score_vnd": 0.0,
+    "requires_at_least_wait_source_groups": 3,
+    "test_used_for_selection": false,
+    "shadow_policy_is_not_enabled_automatically": true
+  },
+  "calibration": {
+    "pairs": 4265,
+    "itineraries": 48,
+    "source_groups": 16,
+    "price_mae_vnd": 145170.9261430246,
+    "persistence_mae_vnd": 145170.9261430246,
+    "auc_drop_within": 0.7374094119588067,
+    "average_precision": 0.3381472167060267,
+    "brier": 0.10372249105054575,
+    "event_prevalence": 0.1338804220398593,
+    "empirical_interval_90pct_coverage": 0.9005861664712779,
+    "by_horizon": [
+      {
+        "hours": 6,
+        "n_pairs": 1006,
+        "model_mae_vnd": 40875.74552683897,
+        "persistence_mae_vnd": 40875.74552683897,
+        "observed_drop_within_rate": 0.03777335984095427
+      },
+      {
+        "hours": 12,
+        "n_pairs": 963,
+        "model_mae_vnd": 78821.39148494288,
+        "persistence_mae_vnd": 78821.39148494288,
+        "observed_drop_within_rate": 0.07580477673935618
+      },
+      {
+        "hours": 24,
+        "n_pairs": 910,
+        "model_mae_vnd": 140517.58241758242,
+        "persistence_mae_vnd": 140517.58241758242,
+        "observed_drop_within_rate": 0.13076923076923078
+      },
+      {
+        "hours": 48,
+        "n_pairs": 764,
+        "model_mae_vnd": 231056.28272251307,
+        "persistence_mae_vnd": 231056.28272251307,
+        "observed_drop_within_rate": 0.21335078534031413
+      },
+      {
+        "hours": 72,
+        "n_pairs": 622,
+        "model_mae_vnd": 317893.8906752412,
+        "persistence_mae_vnd": 317893.8906752412,
+        "observed_drop_within_rate": 0.2861736334405145
+      }
+    ],
+    "calibration_bins": [
+      {
+        "bin": "(-0.001, 0.1]",
+        "n_pairs": 2192,
+        "predicted_probability": 0.05336303814518928,
+        "observed_event_rate": 0.055656934306569344
+      },
+      {
+        "bin": "(0.1, 0.2]",
+        "n_pairs": 1161,
+        "predicted_probability": 0.14442684677625306,
+        "observed_event_rate": 0.14039621016365203
+      },
+      {
+        "bin": "(0.2, 0.3]",
+        "n_pairs": 535,
+        "predicted_probability": 0.24627899083426852,
+        "observed_event_rate": 0.23738317757009345
+      },
+      {
+        "bin": "(0.3, 0.4]",
+        "n_pairs": 243,
+        "predicted_probability": 0.34601468541694774,
+        "observed_event_rate": 0.3868312757201646
+      },
+      {
+        "bin": "(0.4, 0.5]",
+        "n_pairs": 86,
+        "predicted_probability": 0.44062435470509026,
+        "observed_event_rate": 0.38372093023255816
+      },
+      {
+        "bin": "(0.5, 0.6]",
+        "n_pairs": 36,
+        "predicted_probability": 0.5369326810193351,
+        "observed_event_rate": 0.6111111111111112
+      },
+      {
+        "bin": "(0.6, 0.7]",
+        "n_pairs": 12,
+        "predicted_probability": 0.6241576499856859,
+        "observed_event_rate": 0.8333333333333334
+      }
+    ]
+  },
+  "dataset": {
+    "rows": 65067,
+    "itineraries": 720,
+    "source_groups": 217,
+    "partitions": {
+      "train": {
+        "itineraries": 514,
+        "sources": 151
+      },
+      "calibration": {
+        "itineraries": 48,
+        "sources": 16
+      },
+      "policy_validation": {
+        "itineraries": 65,
+        "sources": 17
+      },
+      "test": {
+        "itineraries": 93,
+        "sources": 33
+      }
+    }
+  },
+  "policy_validation": {
+    "forecast": {
+      "pairs": 3945,
+      "itineraries": 65,
+      "source_groups": 17,
+      "price_mae_vnd": 144790.11406844106,
+      "persistence_mae_vnd": 144790.11406844106,
+      "auc_drop_within": 0.7651710927832023,
+      "average_precision": 0.3897352311580657,
+      "brier": 0.12187179606877216,
+      "event_prevalence": 0.16831432192648924,
+      "empirical_interval_90pct_coverage": 0.9209125475285171,
+      "by_horizon": [
+        {
+          "hours": 6,
+          "n_pairs": 921,
+          "model_mae_vnd": 26424.538545059717,
+          "persistence_mae_vnd": 26424.538545059717,
+          "observed_drop_within_rate": 0.03474484256243214
+        },
+        {
+          "hours": 12,
+          "n_pairs": 886,
+          "model_mae_vnd": 81858.9164785553,
+          "persistence_mae_vnd": 81858.9164785553,
+          "observed_drop_within_rate": 0.0981941309255079
+        },
+        {
+          "hours": 24,
+          "n_pairs": 846,
+          "model_mae_vnd": 152578.01418439715,
+          "persistence_mae_vnd": 152578.01418439715,
+          "observed_drop_within_rate": 0.16784869976359337
+        },
+        {
+          "hours": 48,
+          "n_pairs": 711,
+          "model_mae_vnd": 238102.6722925457,
+          "persistence_mae_vnd": 238102.6722925457,
+          "observed_drop_within_rate": 0.27566807313642755
+        },
+        {
+          "hours": 72,
+          "n_pairs": 581,
+          "model_mae_vnd": 302858.86402753874,
+          "persistence_mae_vnd": 302858.86402753874,
+          "observed_drop_within_rate": 0.35628227194492257
+        }
+      ],
+      "calibration_bins": [
+        {
+          "bin": "(-0.001, 0.1]",
+          "n_pairs": 1676,
+          "predicted_probability": 0.060642250163538344,
+          "observed_event_rate": 0.04892601431980907
+        },
+        {
+          "bin": "(0.1, 0.2]",
+          "n_pairs": 1091,
+          "predicted_probability": 0.1477965373943364,
+          "observed_event_rate": 0.16315307057745188
+        },
+        {
+          "bin": "(0.2, 0.3]",
+          "n_pairs": 592,
+          "predicted_probability": 0.2512905586828998,
+          "observed_event_rate": 0.2635135135135135
+        },
+        {
+          "bin": "(0.3, 0.4]",
+          "n_pairs": 403,
+          "predicted_probability": 0.3473224937015955,
+          "observed_event_rate": 0.38461538461538464
+        },
+        {
+          "bin": "(0.4, 0.5]",
+          "n_pairs": 155,
+          "predicted_probability": 0.43885843402285013,
+          "observed_event_rate": 0.47096774193548385
+        },
+        {
+          "bin": "(0.5, 0.6]",
+          "n_pairs": 27,
+          "predicted_probability": 0.5454171591476477,
+          "observed_event_rate": 0.7037037037037037
+        },
+        {
+          "bin": "(0.6, 0.7]",
+          "n_pairs": 1,
+          "predicted_probability": 0.6046524564755306,
+          "observed_event_rate": 1.0
+        }
+      ]
+    },
+    "sequential": {
+      "episodes": 285,
+      "unique_itineraries": 57,
+      "executed": 285,
+      "unexecuted": 0,
+      "source_groups": 15,
+      "initial_waits": 0,
+      "mean_saving_vnd": 0.0,
+      "total_saving_vnd": 0.0,
+      "mean_paid_vnd": 1682021.0526315789,
+      "mean_regret_vnd": 215947.36842105264,
+      "win_rate": 0.0,
+      "loss_rate": 0.0,
+      "mean_downside_vnd": 0.0,
+      "minimum_saving_vnd": 0.0,
+      "disclaimer": "SEMI_SYNTHETIC_REAL_CALIBRATED; internal benchmark; oracle uses observed prices only, not guaranteed market minima",
+      "cluster_bootstrap_saving_95pct": [
+        0.0,
+        0.0
+      ]
+    },
+    "buy_now": {
+      "episodes": 285,
+      "unique_itineraries": 57,
+      "executed": 285,
+      "unexecuted": 0,
+      "source_groups": 15,
+      "initial_waits": 0,
+      "mean_saving_vnd": 0.0,
+      "total_saving_vnd": 0.0,
+      "mean_paid_vnd": 1682021.0526315789,
+      "mean_regret_vnd": 215947.36842105264,
+      "win_rate": 0.0,
+      "loss_rate": 0.0,
+      "mean_downside_vnd": 0.0,
+      "minimum_saving_vnd": 0.0,
+      "disclaimer": "SEMI_SYNTHETIC_REAL_CALIBRATED; internal benchmark; oracle uses observed prices only, not guaranteed market minima"
+    },
+    "coverage": {
+      "requested_itineraries": 65,
+      "eligible_episodes": 285,
+      "eligible_itineraries": 57,
+      "excluded_entries": 35
+    }
+  },
+  "test": {
+    "forecast": {
+      "pairs": 5247,
+      "itineraries": 93,
+      "source_groups": 33,
+      "price_mae_vnd": 159669.52544311035,
+      "persistence_mae_vnd": 159669.52544311035,
+      "auc_drop_within": 0.7629290594626643,
+      "average_precision": 0.3089238265781604,
+      "brier": 0.10622151142734419,
+      "event_prevalence": 0.13684009910425005,
+      "empirical_interval_90pct_coverage": 0.8987993138936535,
+      "by_horizon": [
+        {
+          "hours": 6,
+          "n_pairs": 1273,
+          "model_mae_vnd": 33008.64100549882,
+          "persistence_mae_vnd": 33008.64100549882,
+          "observed_drop_within_rate": 0.03456402199528672
+        },
+        {
+          "hours": 12,
+          "n_pairs": 1224,
+          "model_mae_vnd": 80202.61437908496,
+          "persistence_mae_vnd": 80202.61437908496,
+          "observed_drop_within_rate": 0.0784313725490196
+        },
+        {
+          "hours": 24,
+          "n_pairs": 1120,
+          "model_mae_vnd": 153685.7142857143,
+          "persistence_mae_vnd": 153685.7142857143,
+          "observed_drop_within_rate": 0.1419642857142857
+        },
+        {
+          "hours": 48,
+          "n_pairs": 901,
+          "model_mae_vnd": 278452.8301886792,
+          "persistence_mae_vnd": 278452.8301886792,
+          "observed_drop_within_rate": 0.22752497225305215
+        },
+        {
+          "hours": 72,
+          "n_pairs": 729,
+          "model_mae_vnd": 376658.4362139918,
+          "persistence_mae_vnd": 376658.4362139918,
+          "observed_drop_within_rate": 0.2935528120713306
+        }
+      ],
+      "calibration_bins": [
+        {
+          "bin": "(-0.001, 0.1]",
+          "n_pairs": 2738,
+          "predicted_probability": 0.054630645097671744,
+          "observed_event_rate": 0.04747991234477721
+        },
+        {
+          "bin": "(0.1, 0.2]",
+          "n_pairs": 1270,
+          "predicted_probability": 0.14308593135990177,
+          "observed_event_rate": 0.15669291338582678
+        },
+        {
+          "bin": "(0.2, 0.3]",
+          "n_pairs": 548,
+          "predicted_probability": 0.24587818259927277,
+          "observed_event_rate": 0.26277372262773724
+        },
+        {
+          "bin": "(0.3, 0.4]",
+          "n_pairs": 408,
+          "predicted_probability": 0.3448637782527329,
+          "observed_event_rate": 0.3602941176470588
+        },
+        {
+          "bin": "(0.4, 0.5]",
+          "n_pairs": 190,
+          "predicted_probability": 0.44205073079358276,
+          "observed_event_rate": 0.3157894736842105
+        },
+        {
+          "bin": "(0.5, 0.6]",
+          "n_pairs": 73,
+          "predicted_probability": 0.5411827722609645,
+          "observed_event_rate": 0.3835616438356164
+        },
+        {
+          "bin": "(0.6, 0.7]",
+          "n_pairs": 17,
+          "predicted_probability": 0.6266542149644899,
+          "observed_event_rate": 0.5294117647058824
+        },
+        {
+          "bin": "(0.7, 0.8]",
+          "n_pairs": 3,
+          "predicted_probability": 0.7187822400735892,
+          "observed_event_rate": 0.3333333333333333
+        }
+      ]
+    },
+    "sequential": {
+      "episodes": 321,
+      "unique_itineraries": 65,
+      "executed": 321,
+      "unexecuted": 0,
+      "source_groups": 26,
+      "initial_waits": 0,
+      "mean_saving_vnd": 0.0,
+      "total_saving_vnd": 0.0,
+      "mean_paid_vnd": 1552975.07788162,
+      "mean_regret_vnd": 190744.54828660437,
+      "win_rate": 0.0,
+      "loss_rate": 0.0,
+      "mean_downside_vnd": 0.0,
+      "minimum_saving_vnd": 0.0,
+      "disclaimer": "SEMI_SYNTHETIC_REAL_CALIBRATED; internal benchmark; oracle uses observed prices only, not guaranteed market minima",
+      "cluster_bootstrap_saving_95pct": [
+        0.0,
+        0.0
+      ]
+    },
+    "buy_now": {
+      "episodes": 321,
+      "unique_itineraries": 65,
+      "executed": 321,
+      "unexecuted": 0,
+      "source_groups": 26,
+      "initial_waits": 0,
+      "mean_saving_vnd": 0.0,
+      "total_saving_vnd": 0.0,
+      "mean_paid_vnd": 1552975.07788162,
+      "mean_regret_vnd": 190744.54828660437,
+      "win_rate": 0.0,
+      "loss_rate": 0.0,
+      "mean_downside_vnd": 0.0,
+      "minimum_saving_vnd": 0.0,
+      "disclaimer": "SEMI_SYNTHETIC_REAL_CALIBRATED; internal benchmark; oracle uses observed prices only, not guaranteed market minima"
+    },
+    "coverage": {
+      "requested_itineraries": 93,
+      "eligible_episodes": 321,
+      "eligible_itineraries": 65,
+      "excluded_entries": 117
+    },
+    "v3_same_episodes_sequential": {
+      "episodes": 321,
+      "unique_itineraries": 65,
+      "executed": 321,
+      "unexecuted": 0,
+      "source_groups": 26,
+      "initial_waits": 11,
+      "mean_saving_vnd": 8984.42367601246,
+      "total_saving_vnd": 2884000.0,
+      "mean_paid_vnd": 1543990.6542056075,
+      "mean_regret_vnd": 181760.1246105919,
+      "win_rate": 0.012461059190031152,
+      "loss_rate": 0.0,
+      "mean_downside_vnd": 0.0,
+      "minimum_saving_vnd": 0.0,
+      "disclaimer": "SEMI_SYNTHETIC_REAL_CALIBRATED; internal benchmark; oracle uses observed prices only, not guaranteed market minima"
+    },
+    "v3_original_pair_diagnostic": {
+      "pairs": 10144,
+      "price_mae_vnd": 255587.5926435666,
+      "not_identical_targets_to_v4": true
+    },
+    "same_target_price_comparison": {
+      "pairs": 5247,
+      "v3_price_mae_vnd": 190834.74063661133,
+      "v4_price_mae_vnd": 159669.52544311035,
+      "persistence_mae_vnd": 159669.52544311035
+    }
+  },
+  "stress_assumption_only": {
+    "sequential": {
+      "episodes": 321,
+      "unique_itineraries": 65,
+      "executed": 321,
+      "unexecuted": 0,
+      "source_groups": 26,
+      "initial_waits": 0,
+      "mean_saving_vnd": 0.0,
+      "total_saving_vnd": 0.0,
+      "mean_paid_vnd": 1636741.4330218069,
+      "mean_regret_vnd": 199679.1277258567,
+      "win_rate": 0.0,
+      "loss_rate": 0.0,
+      "mean_downside_vnd": 0.0,
+      "minimum_saving_vnd": 0.0,
+      "disclaimer": "SEMI_SYNTHETIC_REAL_CALIBRATED; internal benchmark; oracle uses observed prices only, not guaranteed market minima"
+    },
+    "excluded": 117,
+    "independent_market_test": false
+  }
+}
